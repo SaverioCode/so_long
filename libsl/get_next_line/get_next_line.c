@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:18:07 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/02/17 01:03:57 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/21 15:45:58 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ char	*get_next_line(int fd)
 	size = 1;
 	while ((!s_buf || !ft_strchr(s_buf, 10)) && size)
 	{
-		line = malloc(BUFFER_SIZE + 1);
+		line = malloc(1);
 		if (!line)
 			return (NULL);
-		size = read(fd, line, BUFFER_SIZE);
+		size = read(fd, line, 1);
 		if (size < 0)
 			return (ft_free(line, NULL));
 		line[size] = 0;
