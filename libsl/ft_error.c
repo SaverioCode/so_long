@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 15:02:42 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/21 15:28:39 by fgarzi-c         ###   ########.fr       */
+/*   Created: 2023/03/21 15:22:44 by fgarzi-c          #+#    #+#             */
+/*   Updated: 2023/03/21 15:22:57 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libsl/so_long.h"
+#include "so_long.h"
 
-int	main(int ac, char **av)
+void	ft_error(char *str)
 {
-	void	*mlx;
-	void	*mlx_win;
-
-	ft_check_input(ac, av);
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "SO_LONG");
-	mlx_loop(mlx);
+	write(2, str, ft_strlen(str));
+	exit(0);
 }

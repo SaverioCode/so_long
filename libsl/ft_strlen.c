@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 15:02:54 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/20 15:04:10 by fgarzi-c         ###   ########.fr       */
+/*   Created: 2023/03/21 14:53:10 by fgarzi-c          #+#    #+#             */
+/*   Updated: 2023/03/21 14:54:14 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "so_long.h"
 
-# include <unistd.h>
-# include <mlx.h>
+size_t	ft_strlen(char *str)
+{
+	size_t	len;
 
-
-
-# endif
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
+}
