@@ -5,39 +5,31 @@
 #                                                     +:+ +:+         +:+      #
 #    By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/20 15:02:31 by fgarzi-c          #+#    #+#              #
-#    Updated: 2023/03/22 14:43:44 by fgarzi-c         ###   ########.fr        #
+#    Created: 2023/03/22 14:37:33 by fgarzi-c          #+#    #+#              #
+#    Updated: 2023/03/22 14:44:29 by fgarzi-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = so_long
-LIB_L = libsl/libsl.a
-LIB_G = libsl/get_next_line/get_next_line.a
-LIB_M = -lmlx -framework OpenGl -framework AppKit
-SRCS = so_long.c
+NAME = libsl.a
+SRCS = ft_calloc.c ft_check_input.c ft_error.c ft_free.c \
+	ft_free_on_error.c ft_strlen.c map_handler.c
 OBJS = $(SRCS:.c=.o)
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(%.c)
 	@$(CC) $(CFLAGS) -c $(SRCS)
-	@make -C libsl/get_next_line
-	@make -C libsl/
-	@$(CC) $(CFLAGS) $(LIB_M) $(OBJS) $(LIB_L) $(LIB_G) -o $(NAME)
+	@ar rcs $(NAME) $(OBJS)
 
 %.c: %.o
-	@$(CC) $(CFLAGS) -Imlx -o $<
+	@$(CC) $(CFLAGS) -o $<
 
 clean:
 	@rm -f $(OBJS)
-	@make clean -C libsl/get_next_line
-	@make clean -C libsl
-
+	
 fclean: clean
 	@rm -f $(NAME)
-	@make fclean -C libsl/get_next_line
-	@make fclean -C libsl
-
+	
 re: fclean all
 
 .PHONY: all clean fclean re

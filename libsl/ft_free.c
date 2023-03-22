@@ -6,17 +6,17 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 10:01:53 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/22 13:16:20 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/22 15:09:11 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_free_map(void)
+void	ft_free_map(t_map *map)
 {
-	t_map	*map;
-	size_t	i;
+	int	i;
 
+	i = 0;
 	while (i < map->height)
 	{
 		free(map->map[i]);

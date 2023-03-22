@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:54 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/22 10:22:32 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/22 15:08:13 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@
 typedef struct s_map
 {
 	char	**map;
-	size_t	height;
-	size_t	width;
+	int		height;
+	int		width;
 }	t_map;
 
 void	ft_error(char *str);
-void	ft_free_on_error(void ft_free(), char *error);
-void	ft_free_map(void);
+void	ft_free_on_error(void ft_free(), void *par, char *error);
+void	ft_free_map(t_map *map);
 size_t	ft_strlen(char *str);
 void	ft_check_input(int ac, char **av);
 void	*ft_calloc(size_t bytes);
-void	ft_map_handler(char *map_path);
+void	ft_map_handler(char *map_path, t_map *map);
 
 #endif
