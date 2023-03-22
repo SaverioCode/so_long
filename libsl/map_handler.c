@@ -6,76 +6,11 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:36:31 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/22 15:08:38 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/22 16:38:45 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	ft_map_check_chars(t_map *map)
-{
-	char	*str;
-	int		col;
-	int		player;
-	int		exit;
-	int		i;
-
-	str = "01CEP";
-	i = -1;
-	while (map->map[++i])
-	{
-		while (*map->map[i])
-		{	
-			if (!ft_strchr(str, *map->map[i]))
-				ft_free_on_error(ft_free_map, map, "Error: forbidden char!\n");
-			if (*map->map[i] == 69)
-				exit = 1;
-			if (*map->map[i] == 80)
-				player = 1;
-			if (*map->map[i] == 67)
-				col = 1;
-			map->map[i]++;
-		}
-	}
-	if (!col || !player || !exit)
-		ft_free_on_error(ft_free_map, map, "Error: missing mandatory chars!\n");
-}
-
-void	ft_map_check_wall(t_map *map)
-{
-	int		i;
-	char	*error;
-
-	error = "Error: walls settled incorrectly!\n";
-	i = -1;
-	while (map->map[0][++i])
-		if (map->map[0][i] != 49)
-			ft_free_on_error(ft_free_map, map, error);
-	i = -1;
-	while (map->map[map->height][++i])
-		if (map->map[map->height][i] != 49)
-			ft_free_on_error(ft_free_map, map, error);
-	i = -1;
-	while (map->map[++i])
-		if (map->map[i][0] != 49 || map->map[i][map->width] != 49)
-			ft_free_on_error(ft_free_map, map, error);
-}
-
-void	ft_map_checker(t_map *map)
-{
-	int		i;
-	char	*error;
-
-	error = "Error: map is not rectangular!\n";
-	if (map->height < 3 || map->width < 3 || map->height == map->width)
-		ft_free_on_error(ft_free_map, map, error);
-	i = 0;
-	while (++i < map->height)
-		if (ft_strlen(map->map[i]) != ft_strlen(map->map[i - 1]))
-			ft_free_on_error(ft_free_map, map, error);
-	ft_map_check_wall(map);
-	ft_map_check_chars(map);
-}
 
 void	ft_map_allocate(char *map_path, t_map *map)
 {
@@ -88,7 +23,7 @@ void	ft_map_allocate(char *map_path, t_map *map)
 	while (i < map->height)
 	{
 		map->map[i] = get_next_line(fd);
-		map->map[i][ft_strlen(map->map[i])] = 0;
+		map->map[i][ft_strlen(map->map[i]) - 1] = 0;
 		i++;
 	}
 	close(fd);

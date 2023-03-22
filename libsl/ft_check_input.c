@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 14:47:55 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/22 09:40:32 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/22 15:30:41 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ int	ft_map_format(char *map, size_t map_l)
 	char	*format;
 	int		i;
 
-	format = ".bar";
+	format = ".ber";
 	i = 3;
 	while (i >= 0)
 	{
-		if (map[map_l] != format[i])
+		if (map[map_l - 1] != format[i])
 			return (0);
 		i--;
 		map_l--;
