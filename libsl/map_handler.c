@@ -6,24 +6,45 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:36:31 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/22 10:24:49 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/22 12:46:32 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	ft_map_check_wall()
+{
+	t_map	*map;
+	int		i;
+
+	i = -1;
+	while (map->map[0][++i])
+		if (map->map[0][i] != 49)
+			ft_free_on_error(ft_free_map, "Error: walls settled incorrectly!");
+	i = -1;
+	while (map->map[map->height][++i])
+		if (map->map[map->height][i] != 49)
+			ft_free_on_error(ft_free_map, "Error: walls settled incorrectly!");
+	i = -1;
+	while (map->map[++i])
+		if (map->map[i][0] != 49 || map->map[i][map->width] != 49)
+			ft_free_on_error(ft_free_map, "Error: walls settled incorrectly!");
+}
 
 void	ft_map_checker()
 {
 	t_map	*map;
 	int		i;
 	
-	if (map->height < 2 || map->width < 2 || map->height == map->width)
+	if (map->height < 3 || map->width < 3 || map->height == map->width)
 		ft_free_on_error(ft_free_map, "Error: map is not rectangular!");
 	i = 0;
 	while (++i < map->height)
 		if (ft_strlen(map->map[i]) != ft_strlen(map->map[i - 1]))
 			ft_free_on_error(ft_free_map, "Error: map is not rectangular!");
+	ft_map_check_wall();
 	// check if map characters are valid!
+	
 }
 
 void	ft_map_allocate(char *map_path)
