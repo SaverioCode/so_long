@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:36:31 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/22 10:15:12 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/22 10:17:35 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_map_checker()
 	while (++i < map->height)
 		if (ft_strlen(map->map[i]) != ft_strlen(map->map[i - 1]))
 			ft_free_on_error(ft_free_map, "Error: map is not rectangular!");
+	// check if map characters are valid!
 }
 
 void	ft_map_allocate(char *map_path)
@@ -65,4 +66,5 @@ void	ft_map_reader(char *map_path)
 	close(fd);
 	ft_map_allocate(map_path);
 	map->width = ft_strlen(map->map[0][0]);
+	ft_map_checker();
 }
