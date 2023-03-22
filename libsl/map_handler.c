@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:36:31 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/22 13:14:47 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/22 13:18:00 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_map_check_chars(t_map *map)
 		ft_free_on_error(ft_free_map, "Error: missing mandatory chars!\n");
 }
 
-void	ft_map_check_wall()
+void	ft_map_check_wall(void)
 {
 	t_map	*map;
 	int		i;
@@ -60,11 +60,11 @@ void	ft_map_check_wall()
 			ft_free_on_error(ft_free_map, "Error: walls settled incorrectly!\n");
 }
 
-void	ft_map_checker()
+void	ft_map_checker(void)
 {
 	t_map	*map;
 	int		i;
-	
+
 	if (map->height < 3 || map->width < 3 || map->height == map->width)
 		ft_free_on_error(ft_free_map, "Error: map is not rectangular!\n");
 	i = 0;
@@ -88,7 +88,7 @@ void	ft_map_allocate(char *map_path)
 	{
 		map->map[i] = get_next_line(fd);
 		map->map[i][ft_strlen(map->map[i])] = 0;
-		i++; 
+		i++;
 	}
 	close(fd);
 	map->map[i] = NULL;
@@ -96,7 +96,7 @@ void	ft_map_allocate(char *map_path)
 
 void	ft_map_handler(char *map_path)
 {
-	t_map	*map; /// check if it's ok
+	t_map	*map;
 	int		fd;
 	char	*line;
 
