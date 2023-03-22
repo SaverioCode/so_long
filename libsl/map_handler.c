@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:36:31 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/22 09:42:58 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/22 09:59:40 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void	ft_map_checker()
 {
-	
+	t_map	*map;
+
+	if (map->height == map->width)
+		ft_free_on_error(map->)
 }
 
 void	ft_map_allocate(char *map_path)
@@ -23,10 +26,10 @@ void	ft_map_allocate(char *map_path)
 	int		i;
 	int		fd;
 
-	map->map = ft_malloc((map->height + 1) * 8);
+	map->map = ft_calloc((map->height + 1) * 8);
 	fd = open(map_path, O_RDONLY);
 	i = 0;
-	while (i < map->heigth)
+	while (i < map->height)
 	{
 		map->map[i] = get_next_line(fd);
 		map->map[i][ft_strlen(map->map[i])] = 0;
@@ -56,5 +59,5 @@ void	ft_map_reader(char *map_path)
 	}
 	close(fd);
 	ft_map_allocate(map_path);
-	map->width = ft_strlen(map->map[0]);
+	map->width = ft_strlen(map->map[0][0]);
 }

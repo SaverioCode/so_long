@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_malloc.c                                        :+:      :+:    :+:   */
+/*   ft_free_on_error.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/21 16:44:59 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/21 16:46:18 by fgarzi-c         ###   ########.fr       */
+/*   Created: 2023/03/22 09:47:47 by fgarzi-c          #+#    #+#             */
+/*   Updated: 2023/03/22 09:49:30 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	*ft_malloc(int bytes)
+void	ft_free_on_error(char *s1, char *s2, char *error)
 {
-	void	*var;
-
-	var = malloc(bytes);
-	if (!var)
-		exit(0);
-	return (var);
+	ft_free(s1, s2);
+	ft_error(error);
 }
