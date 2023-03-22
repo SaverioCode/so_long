@@ -6,13 +6,13 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:18:07 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/21 15:45:58 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/22 10:03:24 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_free(char *s1, char *s2)
+char	*ft_free_gnl(char *s1, char *s2)
 {
 	if (s1)
 		free(s1);
@@ -35,7 +35,7 @@ char	*get_next_line(int fd)
 			return (NULL);
 		size = read(fd, line, 1);
 		if (size < 0)
-			return (ft_free(line, NULL));
+			return (ft_free_gnl(line, NULL));
 		line[size] = 0;
 		s_buf = ft_strjoin(s_buf, line);
 	}

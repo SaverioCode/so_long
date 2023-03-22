@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:24:41 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/21 14:52:33 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/22 10:03:42 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		s1[0] = 0;
 	}
 	if (!s1[0] && !s2[0])
-		return (ft_free(s1, s2));
+		return (ft_free_gnl(s1, s2));
 	str = malloc(ft_strlen_gnl(s1, 0) + ft_strlen_gnl(s2, 0) + 1);
 	if (!str)
 		return (NULL);
@@ -62,7 +62,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s2[++j])
 		str[i + j] = s2[j];
 	str[i + j] = 0;
-	ft_free(s1, s2);
+	ft_free_gnl(s1, s2);
 	return (str);
 }
 
@@ -73,7 +73,7 @@ char	*ft_get_line(char *str)
 	int		l;
 
 	if (!str)
-		return (ft_free(str, NULL));
+		return (ft_free_gnl(str, NULL));
 	l = ft_strlen_gnl(str, 10) + 1;
 	dest = malloc(l + 1);
 	if (!dest)
@@ -92,7 +92,7 @@ char	*ft_backup(char	*backup)
 	int		i;
 
 	if (!backup)
-		return (ft_free(backup, NULL));
+		return (ft_free_gnl(backup, NULL));
 	l = ft_strlen_gnl(backup, 10) + 1;
 	str = malloc(ft_strlen_gnl(backup, 0) - l + 1);
 	if (!str)
