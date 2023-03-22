@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:54 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/22 10:09:42 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/22 10:22:32 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ void	ft_free_map(void);
 size_t	ft_strlen(char *str);
 void	ft_check_input(int ac, char **av);
 void	*ft_calloc(size_t bytes);
-void	ft_map_reader(char *map_path);
+void	ft_map_handler(char *map_path);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:36:31 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/22 10:17:35 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/22 10:24:49 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_map_allocate(char *map_path)
 	map->map[i] = NULL;
 }
 
-void	ft_map_reader(char *map_path)
+void	ft_map_handler(char *map_path)
 {
 	t_map	*map; /// check if it's ok
 	int		fd;

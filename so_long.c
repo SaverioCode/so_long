@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:42 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/22 09:41:54 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/22 10:22:38 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 
 	ft_check_input(ac, av);
 	mlx = mlx_init();
-	ft_map_reader(av[1]);
+	ft_map_handler(av[1]);
 	mlx_win = mlx_new_window(mlx, 1920, 1080, "SO_LONG");
 	mlx_loop(mlx);
 }
