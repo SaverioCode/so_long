@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:54 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/21 16:46:45 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/22 09:43:35 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 # include <mlx.h>
-# include <fctnl.h>
+# include <fcntl.h>
 # include "get_next_line/get_next_line.h"
 
 typedef struct s_map
@@ -29,5 +29,6 @@ void	ft_error(char *str);
 size_t	ft_strlen(char *str);
 void	ft_check_input(int ac, char **av);
 void	*ft_malloc(int bytes);
+void	ft_map_reader(char *map_path);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:36:31 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/21 16:56:17 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/22 09:42:58 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@ void	ft_map_checker()
 	
 }
 
-void	ft_map_allocate(int	fd)
+void	ft_map_allocate(char *map_path)
 {
 	t_map	*map;
 	int		i;
+	int		fd;
 
 	map->map = ft_malloc((map->height + 1) * 8);
+	fd = open(map_path, O_RDONLY);
 	i = 0;
 	while (i < map->heigth)
 	{
@@ -30,17 +32,18 @@ void	ft_map_allocate(int	fd)
 		map->map[i][ft_strlen(map->map[i])] = 0;
 		i++; 
 	}
+	close(fd);
 	map->map[i] = NULL;
 }
 
-void	ft_map_reader()
+void	ft_map_reader(char *map_path)
 {
 	t_map	*map; /// check if it's ok
 	int		fd;
 	char	*line;
 
 	map->height = 0;
-	fd = open(map, O_RDONLY);
+	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
 		ft_error("Error: map not found!\n");
 	while (1)
@@ -51,7 +54,7 @@ void	ft_map_reader()
 		map->height++;
 		free(line);
 	}
-	ft_map_allocate(fd);
-	map->width = ft_strlen(map->map[0]);
 	close(fd);
+	ft_map_allocate(map_path);
+	map->width = ft_strlen(map->map[0]);
 }
