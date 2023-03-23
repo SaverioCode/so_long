@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:22:44 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/21 15:22:57 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/23 21:25:15 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_error(char *str)
 {
 	write(2, str, ft_strlen(str));
-	exit(0);
+	exit(1);
 }
