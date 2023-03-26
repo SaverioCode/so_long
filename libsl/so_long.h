@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:54 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/23 21:47:21 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/26 15:58:26 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ typedef struct s_map
 	char	**map;
 	int		height;
 	int		width;
+	int		player_x;
+	int		player_y;
+	int		enemy_x;
+	int		enemy_y;
 }	t_map;
 
 typedef struct s_game
@@ -30,6 +34,7 @@ typedef struct s_game
 	void	*game;
 	void	*win;
 	void	*player;
+	void	*enemy;
 	void	*col;
 	void	*exit;
 	void	*wall;
