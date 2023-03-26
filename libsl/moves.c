@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:00:25 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/26 20:59:10 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/26 21:00:39 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	ft_collectable(t_game *game, int x, int y)
 	if (game->map[y][x] != 67)
 		return (0);
 	mlx_put_image_to_window(game->game, game->win, game->background, x * 50, y * 50);
+	mlx_put_image_to_window(game->game, game->win, game->ground, x * 50, y * 50);
 	return (1);
 }
 
