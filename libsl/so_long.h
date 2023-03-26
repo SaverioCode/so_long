@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:54 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/26 16:34:46 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/26 16:40:25 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ void	ft_map_handler(char *map_path, t_map *map);
 void	ft_map_checker(t_map *map);
 void	map_printer(t_game *game, t_map *map, t_img *img);
 void	ft_print_sprite(t_game *game, t_map *map, int x, int y);
+void	ft_key_hook(int key, t_game *game, t_map *map);
 
 #endif

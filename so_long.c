@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:42 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/26 16:35:15 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/26 17:06:41 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int	main(int ac, char **av)
 	game.game = mlx_init();
 	game.win = mlx_new_window(game.game, map.width * 50, map.height * 50, "SO_LONG"); /// to modify
 	map_printer(&game, &map, &img);
-	mlx_key_hook(game.win, ft_key_hook, "");
+	mlx_key_hook(game.win, (void *)ft_key_hook, "");
 	mlx_loop(game.game);
 }
