@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:00:25 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/26 21:06:48 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/26 21:10:16 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_move(t_game *game, int x, int y)
 	game->mv_cnt++;
 	game->player_x += x;
 	game->player_y += y;
-	if (game->map[game->player_y][game->player_y] == 67)
+	if (game->map[game->player_y][game->player_x] == 67)
 		ft_print_bckground_ground(game, game->player_x, game->player_y);
 	mlx_put_image_to_window(game->game, game->win, game->player,
 		game->player_x * 50, game->player_y * 50);
