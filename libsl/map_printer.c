@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 17:26:47 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/26 19:31:15 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/26 20:54:12 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,7 @@ void	map_printer(t_game *game, t_img *img)
 			if (game->map[y][x] == 80)
 			{
 				game->player_y = y;
-				printf("y: %d, player_y: %d\n", y, game->player_y);//////
 				game->player_x = x;
-				printf("x: %d, player_x: %d\n", x, game->player_x);//////
 			}
 			ft_print_sprite(game, x, y);
 			x++;

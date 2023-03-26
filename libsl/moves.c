@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:00:25 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/26 20:45:59 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/26 20:53:08 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@ void	ft_move(t_game *game, int x, int y)
 	game->player_y += y;
 	mlx_put_image_to_window(game->game, game->win, game->player,
 		game->player_x * 50, game->player_y * 50);
-	ft_print_sprite(game, game->player_x - x, game->player_y - y);
+	if (game->map[game->player_y - y][game->player_x - x] == 67)
+		mlx_put_image_to_window(game->game, game->win, game->background,
+			(game->player_x - x) * 50, (game->player_y - y) * 50);
+	else
+		ft_print_sprite(game, game->player_x - x, game->player_y - y);
 }
 
 void	ft_key_hook(int key, t_game *game)
