@@ -6,11 +6,17 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 17:26:47 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/26 20:54:12 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/26 21:03:07 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	ft_print_bckground_ground(t_game *game, int x, int y)
+{
+	mlx_put_image_to_window(game->game, game->win, game->background, x * 50, y * 50);
+	mlx_put_image_to_window(game->game, game->win, game->ground, x * 50, y * 50);
+}
 
 void	initialize_imgs(t_game *game, t_img *img)
 {
