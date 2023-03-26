@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:00:25 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/26 19:40:52 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/26 20:45:59 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_move(t_game *game, int x, int y)
 {	
 	if (game->map[game->player_y + y][game->player_x + x] == 49)
 		return ;
-	game->counter++;
+	game->mv_cnt++;
 	game->player_x += x;
 	game->player_y += y;
 	mlx_put_image_to_window(game->game, game->win, game->player,

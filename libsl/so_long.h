@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:54 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/26 19:34:14 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/26 20:44:05 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct s_game
 	int		enemy_x;
 	int		enemy_y;
 	void	*player;
-	int		counter;
+	int		mv_cnt;
 	void	*enemy;
 	void	*col;
 	void	*exit;
