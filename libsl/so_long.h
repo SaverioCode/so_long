@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:54 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/22 18:56:33 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/23 21:47:21 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_game
 	void	*exit;
 	void	*wall;
 	void	*ground;
+	void	*background;
 }	t_game;
 
 typedef struct s_img

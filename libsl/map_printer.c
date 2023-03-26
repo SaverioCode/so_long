@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 17:26:47 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/22 19:00:16 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/23 21:49:02 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void	initialize_imgs(t_game *game, t_img *img, t_map *map)
 {
-	img->width = 1;
-	img->heigth = 1;
+	game->background = mlx_xpm_file_to_image(game->game, "assets/background.xpm", &img->width, &img->heigth);
 	game->wall = mlx_xpm_file_to_image(game->game, "assets/wall.xpm", &img->width, &img->heigth);
 	// game->player = mlx_xpm_file_to_image(game->game, , &img->width, &img->heigth);
 	// game->ground = mlx_xpm_file_to_image(game->game, , &img->width, &img->heigth);
@@ -37,6 +36,7 @@ void	map_printer(t_game *game, t_map *map, t_img *img)
 		x = -1;
 		while (map->map[y][++x])
 		{
+			mlx_put_image_to_window(game->game, game->win, game->background, x * 50, y * 50);
 			if (map->map[y][x] == 49)
 				mlx_put_image_to_window(game->game, game->win, game->wall, x * 50, y * 50);
 			// else if (map->map[y][x] == 48)

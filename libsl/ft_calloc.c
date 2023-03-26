@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:44:59 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/22 14:45:19 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/26 15:47:26 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_calloc(size_t bytes)
 
 	var = malloc(bytes);
 	if (!var)
-		exit(0);
+		exit(1);
 	tmp = (char *)var;
 	i = 0;
 	while (i < bytes)
