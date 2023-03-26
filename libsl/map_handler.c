@@ -6,13 +6,13 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:36:31 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/22 16:38:45 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/26 19:28:46 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_map_allocate(char *map_path, t_map *map)
+void	ft_map_allocate(char *map_path, t_game *map)
 {
 	int		i;
 	int		fd;
@@ -30,7 +30,7 @@ void	ft_map_allocate(char *map_path, t_map *map)
 	map->map[i] = NULL;
 }
 
-void	ft_map_handler(char *map_path, t_map *map)
+void	ft_map_handler(char *map_path, t_game *map)
 {
 	int		fd;
 	char	*line;

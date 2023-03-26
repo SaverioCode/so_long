@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 16:38:29 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/26 16:33:40 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/26 19:32:53 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	mandatory_chars(char c, int *ex_pl_col)
 		ex_pl_col[2] = 1;
 }
 
-void	ft_map_check_chars(t_map *map)
+void	ft_map_check_chars(t_game *map)
 {
 	char	*str;
 	int		*ex_pl_col;
@@ -47,7 +47,7 @@ void	ft_map_check_chars(t_map *map)
 	free(ex_pl_col);
 }
 
-void	ft_map_check_wall(t_map *map)
+void	ft_map_check_wall(t_game *map)
 {
 	int		i;
 	char	*error;
@@ -67,7 +67,7 @@ void	ft_map_check_wall(t_map *map)
 			ft_free_on_error(ft_free_map, map, error);
 }
 
-void	ft_map_checker(t_map *map)
+void	ft_map_checker(t_game *map)
 {
 	int		i;
 	char	*error;

@@ -6,7 +6,7 @@
 #    By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 15:02:31 by fgarzi-c          #+#    #+#              #
-#    Updated: 2023/03/22 14:43:44 by fgarzi-c         ###   ########.fr        #
+#    Updated: 2023/03/26 19:42:36 by fgarzi-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ all: $(%.c)
 	@$(CC) $(CFLAGS) $(LIB_M) $(OBJS) $(LIB_L) $(LIB_G) -o $(NAME)
 
 %.c: %.o
-	@$(CC) $(CFLAGS) -Imlx -o $<
+	@$(CC) $(CFLAGS) -o $<
 
 clean:
 	@rm -f $(OBJS)
