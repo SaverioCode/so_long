@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 16:38:29 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/22 16:46:05 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/26 16:33:40 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	mandatory_chars(char c, int *ex_pl_col)
 {
 	if (c == 69)
 		ex_pl_col[0] = 1;
-	if (c == 80)
+	else if (c == 80)
 		ex_pl_col[1] = 1;
-	if (c == 67)
+	else if (c == 67)
 		ex_pl_col[2] = 1;
 }
 
