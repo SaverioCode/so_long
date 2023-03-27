@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:54 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/27 14:45:48 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:44:12 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct s_img
 void	ft_error(char *str);
 void	ft_free_on_error(void ft_free(), void *par, char *error);
 void	ft_free_map(t_game *map);
+void	ft_free_imgs(t_game *game);
 size_t	ft_strlen(char *str);
 void	ft_check_input(int ac, char **av);
 void	*ft_calloc(size_t bytes);

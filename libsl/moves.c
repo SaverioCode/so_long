@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:00:25 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/27 15:25:51 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:32:30 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,10 @@ void	ft_new_position(t_game *game, int x, int y)
 		game->col_cnt++;
 		ft_print_sprite(game, x, y);
 	}
-	// else if ()	
-}
-
-
-void	ft_old_postition(t_game *game, int x, int y)
-{
-		ft_print_sprite(game, x, y);
+	// else if (game->map[y][x] == 50)
+	// 	ft_game_over();/// lose ///
+	// else if (game->map[y][x] == 69 && game->col_tot == game->col_cnt)
+	// 	ft_game_over();/// win ///
 }
 
 void	ft_move(t_game *game, int x, int y)
@@ -39,7 +36,7 @@ void	ft_move(t_game *game, int x, int y)
 	ft_new_position(game, game->player_x, game->player_y);
 	mlx_put_image_to_window(game->game, game->win, game->player,
 		game->player_x * 50, game->player_y * 50);
-	ft_old_postition(game, game->player_x - x, game->player_y - y);
+	ft_print_sprite(game, game->player_x - x, game->player_y - y);
 }
 
 void	ft_key_hook(int key, t_game *game)
