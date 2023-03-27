@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:00:25 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/27 15:54:43 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/27 18:54:20 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	ft_move(t_game *game, int x, int y)
 	game->mv_cnt++;
 	game->player_x += x;
 	game->player_y += y;
+	ft_print_sprite(game, 0, 0);
+	mlx_string_put(game->game, game->win, 15, 15, 0, ft_itoa(game->mv_cnt));
 	ft_new_position(game, game->player_x, game->player_y);
 	mlx_put_image_to_window(game->game, game->win, game->player,
 		game->player_x * 50, game->player_y * 50);
@@ -41,7 +43,6 @@ void	ft_move(t_game *game, int x, int y)
 
 void	ft_key_hook(int key, t_game *game)
 {
-	printf("%d\n", key);//////////
 	if (key == 2 || key == 124)
 		ft_move(game, 1, 0);
 	else if (key == 0 || key == 123)

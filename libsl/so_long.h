@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:54 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/27 15:54:25 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/27 18:47:40 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <mlx.h>
 # include <fcntl.h>
+# include <limits.h>
 # include "get_next_line/get_next_line.h"
 
 typedef struct s_game
@@ -61,5 +62,7 @@ void	ft_print_sprite(t_game *game, int x, int y);
 void	ft_print_bckground_ground(t_game *game, int x, int y);
 void	ft_key_hook(int key, t_game *game);
 void	ft_game_over(t_game *game);
+int		ft_numlen(long long num, int base);
+char	*ft_itoa(long long num);
 
 #endif
