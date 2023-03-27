@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:00:25 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/27 15:32:30 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:54:43 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	ft_move(t_game *game, int x, int y)
 
 void	ft_key_hook(int key, t_game *game)
 {
+	printf("%d\n", key);//////////
 	if (key == 2 || key == 124)
 		ft_move(game, 1, 0);
 	else if (key == 0 || key == 123)
@@ -49,4 +50,6 @@ void	ft_key_hook(int key, t_game *game)
 		ft_move(game, 0, 1);
 	else if (key == 13 || key == 126)
 		ft_move(game, 0, -1);
+	else if (key == 12 || key == 53)
+		ft_game_over(game);
 }

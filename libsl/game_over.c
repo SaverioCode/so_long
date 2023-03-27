@@ -6,13 +6,13 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:35:42 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/27 15:43:30 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:54:30 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	game_over(t_game *game)
+void	ft_game_over(t_game *game)
 {
 	mlx_clear_window(game->game, game->win);
 	ft_free_imgs(game);
