@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:36:31 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/26 19:28:46 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/27 19:50:30 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void	ft_map_allocate(char *map_path, t_game *map)
 	while (i < map->height)
 	{
 		map->map[i] = get_next_line(fd);
-		map->map[i][ft_strlen(map->map[i]) - 1] = 0;
+		if (map->map[i][ft_strlen(map->map[i]) - 1] == 10)
+			map->map[i][ft_strlen(map->map[i]) - 1] = 0;
 		i++;
 	}
 	close(fd);
