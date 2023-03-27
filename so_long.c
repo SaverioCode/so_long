@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:42 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/26 20:54:59 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:46:55 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	main(int ac, char **av)
 	ft_check_input(ac, av);
 	ft_map_handler(av[1], &game);
 	game.mv_cnt = 0;
+	game.col_cnt = 0;
+	game.col_tot = 0;
 	game.game = mlx_init();
 	game.win = mlx_new_window(game.game, game.width * 50, game.height * 50, "SO_LONG");
 	map_printer(&game, &img);

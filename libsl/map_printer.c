@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 17:26:47 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/26 21:03:07 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:47:01 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ void	map_printer(t_game *game, t_img *img)
 				game->player_y = y;
 				game->player_x = x;
 			}
+			if (game->map[y][x] == 67)
+				game->col_tot++;
 			ft_print_sprite(game, x, y);
 			x++;
 		}
