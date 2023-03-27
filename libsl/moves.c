@@ -6,11 +6,25 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:00:25 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/27 19:35:06 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/27 20:15:04 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	ft_player_move(t_game *game, int x, int y)
+{
+	if (x > 0)
+		game->player = game->player_right;
+	else if (x < 0)
+		game->player = game->player_left;
+	else if (y > 0)
+		game->player = game->player_up;
+	else if (y < 0)
+		game->player = game->player_down;
+	mlx_put_image_to_window(game->game, game->win, game->player,
+		game->player_x * 50, game->player_y * 50);
+}
 
 void	ft_new_position(t_game *game, int x, int y)
 {
@@ -20,10 +34,10 @@ void	ft_new_position(t_game *game, int x, int y)
 		game->col_cnt++;
 		ft_print_sprite(game, x, y);
 	}
+	else if (game->map[y][x] == 69 && game->col_tot == game->col_cnt)
+		ft_game_over(game, "YOU WIN!");
 	// else if (game->map[y][x] == 50)
 	// 	ft_game_over();/// lose ///
-	// else if (game->map[y][x] == 69 && game->col_tot == game->col_cnt)
-	// 	ft_game_over();/// win ///
 }
 
 void	ft_move(t_game *game, int x, int y)
@@ -36,8 +50,9 @@ void	ft_move(t_game *game, int x, int y)
 	ft_print_sprite(game, 0, 0);
 	mlx_string_put(game->game, game->win, 15, 15, 0, ft_itoa(game->mv_cnt));
 	ft_new_position(game, game->player_x, game->player_y);
-	mlx_put_image_to_window(game->game, game->win, game->player,
-		game->player_x * 50, game->player_y * 50);
+	ft_player_move(game, x, y);
+	// mlx_put_image_to_window(game->game, game->win, game->player,
+	// 	game->player_x * 50, game->player_y * 50);
 	ft_print_sprite(game, game->player_x - x, game->player_y - y);
 }
 

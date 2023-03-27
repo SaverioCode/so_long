@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 17:26:47 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/27 18:59:11 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/27 20:16:22 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,14 @@ void	initialize_imgs(t_game *game, t_img *img)
 {
 	game->background = mlx_xpm_file_to_image(game->game, "assets/background.xpm", &img->width, &img->heigth);
 	game->wall = mlx_xpm_file_to_image(game->game, "assets/wall.xpm", &img->width, &img->heigth);
-	game->player = mlx_xpm_file_to_image(game->game, "assets/player.xpm", &img->width, &img->heigth);
+	game->player_right = mlx_xpm_file_to_image(game->game, "assets/player_r.xpm", &img->width, &img->heigth);
+	game->player_left = mlx_xpm_file_to_image(game->game, "assets/player_l.xpm", &img->width, &img->heigth);
+	game->player_up = mlx_xpm_file_to_image(game->game, "assets/player_u.xpm", &img->width, &img->heigth);
+	game->player_down = mlx_xpm_file_to_image(game->game, "assets/player_d.xpm", &img->width, &img->heigth);
 	game->ground = mlx_xpm_file_to_image(game->game, "assets/ground.xpm", &img->width, &img->heigth);
 	game->col = mlx_xpm_file_to_image(game->game, "assets/col.xpm", &img->width, &img->heigth);
 	game->exit = mlx_xpm_file_to_image(game->game, "assets/exit.xpm", &img->width, &img->heigth);
+	game->player = game->player_right;
 	if (!game->wall || !game->player || !game->col || !game->exit)
 		ft_free_on_error(ft_free_map, game, "Error: asset not working!\n");
 	else if (!game->background)

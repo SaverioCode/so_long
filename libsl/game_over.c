@@ -6,11 +6,16 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:35:42 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/27 19:34:44 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/27 19:53:42 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	ft_game_over(t_game *game, char *str)
+{
+	mlx_string_put(game->game, game->win, game->width, game->height, 0, str);
+}
 
 void	ft_close_game(t_game *game)
 {

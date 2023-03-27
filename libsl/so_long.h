@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:54 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/27 19:34:54 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/27 20:15:08 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ typedef struct s_game
 	int		enemy_x;
 	int		enemy_y;
 	void	*player;
+	void	*player_right;
+	void	*player_left;
+	void	*player_up;
+	void	*player_down;
 	int		mv_cnt;
 	void	*enemy;
 	void	*col;
@@ -62,6 +66,7 @@ void	ft_print_sprite(t_game *game, int x, int y);
 void	ft_print_bckground_ground(t_game *game, int x, int y);
 void	ft_key_hook(int key, t_game *game);
 void	ft_close_game(t_game *game);
+void	ft_game_over(t_game *game, char *str);
 int		ft_numlen(long long num, int base);
 char	*ft_itoa(long long num);
 
