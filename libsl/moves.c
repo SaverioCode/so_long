@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:00:25 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/27 20:15:04 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/27 20:49:42 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ void	ft_move(t_game *game, int x, int y)
 	mlx_string_put(game->game, game->win, 15, 15, 0, ft_itoa(game->mv_cnt));
 	ft_new_position(game, game->player_x, game->player_y);
 	ft_player_move(game, x, y);
-	// mlx_put_image_to_window(game->game, game->win, game->player,
-	// 	game->player_x * 50, game->player_y * 50);
 	ft_print_sprite(game, game->player_x - x, game->player_y - y);
 }
 

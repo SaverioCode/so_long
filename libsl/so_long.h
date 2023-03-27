@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:54 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/27 20:15:08 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/27 20:21:37 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct s_game
 typedef struct s_img
 {
 	int	width;
-	int heigth;
+	int	heigth;
 }	t_img;
 
 void	ft_error(char *str);
