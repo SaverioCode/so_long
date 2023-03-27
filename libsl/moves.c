@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:00:25 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/27 14:49:18 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:25:51 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_new_position(t_game *game, int x, int y)
 {
 	if (game->map[y][x] == 67)
 	{	
-		game->map[y][x] == 48;
+		game->map[y][x] = 48;
 		game->col_cnt++;
 		ft_print_sprite(game, x, y);
 	}
@@ -26,12 +26,6 @@ void	ft_new_position(t_game *game, int x, int y)
 
 void	ft_old_postition(t_game *game, int x, int y)
 {
-	// if (game->map[y][x] == 67)
-	// {
-	// 	mlx_put_image_to_window(game->game, game->win, game->background, x * 50, y * 50);
-	// 	mlx_put_image_to_window(game->game, game->win, game->ground, x * 50, y * 50);
-	// }
-	// else
 		ft_print_sprite(game, x, y);
 }
 
