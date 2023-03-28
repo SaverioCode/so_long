@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:42 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/27 20:23:17 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/28 16:50:17 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int	main(int ac, char **av)
 	map_printer(&game, &img);
 	mlx_key_hook(game.win, (void *)ft_key_hook, &game);
 	mlx_hook(game.win, 17, 0, (void *)ft_close_game, &game);
+	// mlx_loop_hook(game.game, (void *)ft_animation, &game);
 	mlx_loop(game.game);
 }

@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:00:25 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/28 16:48:39 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/28 18:14:00 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@ void	ft_player_move(t_game *game, int x, int y)
 	else if (x < 0)
 		game->player = game->player_left;
 	else if (y > 0)
-		game->player = game->player_up;
-	else if (y < 0)
 		game->player = game->player_down;
-	mlx_put_image_to_window(game->game, game->win, game->player,
-		game->player_x * 50, game->player_y * 50);
+	else if (y < 0)
+		game->player = game->player_up;
+	if (game->map[game->player_y][game->player_x] != 50)
+		mlx_put_image_to_window(game->game, game->win, game->player,
+			game->player_x * 50, game->player_y * 50);
 }
 
 void	ft_new_position(t_game *game, int x, int y)
@@ -36,8 +37,8 @@ void	ft_new_position(t_game *game, int x, int y)
 	}
 	else if (game->map[y][x] == 69 && game->col_tot == game->col_cnt)
 		ft_game_over(game, "YOU WIN!");
-	else if (game->map[y][x] == 50)
-		ft_game_over(game, "YOU LOSE!");
+	// else if (game->map[y][x] == 50)
+	// 	game->lose = 1;
 }
 
 void	ft_move(t_game *game, int x, int y)
