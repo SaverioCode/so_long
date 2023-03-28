@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:00:25 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/28 20:34:26 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/28 20:35:03 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	ft_new_position(t_game *game, int x, int y)
 void	ft_move(t_game *game, int x, int y)
 {	
 	char	*game_cnt;
+
 	if (game->map[game->player_y + y][game->player_x + x] == 49)
 		return ;
 	game->mv_cnt++;
