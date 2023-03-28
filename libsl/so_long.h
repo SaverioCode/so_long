@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:54 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/28 18:29:19 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/28 20:02:14 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ void	ft_close_game(t_game *game);
 void	ft_game_over(t_game *game, char *str);
 int		ft_numlen(long long num, int base);
 char	*ft_itoa(long long num);
+void	ft_animation(t_game *game);
 
 #endif

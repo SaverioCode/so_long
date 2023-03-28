@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:35:42 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/28 16:59:58 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/28 20:02:48 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_game_over(t_game *game, char *str)
 {
-	mlx_string_put(game->game, game->win, game->width, game->height, 0, str);
+	write(1, str, ft_strlen(str));
+	ft_close_game(game);
 }
 
 void	ft_close_game(t_game *game)

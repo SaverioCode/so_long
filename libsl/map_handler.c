@@ -6,16 +6,17 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:36:31 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/28 18:29:01 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/28 19:16:22 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_map_reader(t_game *game, int	c, void *img)
+void	ft_map_reader(t_game *game, int c, void *img)
 {
 	int	y;
 	int	x;
+
 	y = 0;
 	while (game->map[y])
 	{
