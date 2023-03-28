@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:54 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/28 17:37:00 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/28 18:29:19 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	ft_check_input(int ac, char **av);
 void	*ft_calloc(size_t bytes);
 void	ft_map_handler(char *map_path, t_game *map);
 void	ft_map_checker(t_game *map);
+void	ft_map_reader(t_game *game, int c, void *img);
 void	map_printer(t_game *game, t_img *img);
 void	ft_print_sprite(t_game *game, int x, int y);
 // void	ft_print_bckground_ground(t_game *game, int x, int y);

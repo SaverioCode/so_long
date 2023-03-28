@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:00:25 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/28 18:14:00 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/28 18:32:28 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,21 @@ void	ft_player_move(t_game *game, int x, int y)
 
 void	ft_new_position(t_game *game, int x, int y)
 {
+	t_img	img;
+
 	if (game->map[y][x] == 67)
 	{	
 		game->map[y][x] = 48;
 		game->col_cnt++;
 		ft_print_sprite(game, x, y);
+		if (game->col_cnt == game->col_tot)
+		{
+			mlx_destroy_image(game->game, game->exit);
+			game->exit = mlx_xpm_file_to_image(game->game, \
+				"assets/exit_1.xpm", &img.width, &img.heigth);
+			ft_map_reader(game, 69, game->background);
+			ft_map_reader(game, 69, game->exit);
+		}
 	}
 	else if (game->map[y][x] == 69 && game->col_tot == game->col_cnt)
 		ft_game_over(game, "YOU WIN!");

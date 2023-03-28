@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:00:31 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/28 17:27:21 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/28 18:29:12 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,6 @@ void	coin_flip_images(t_game *game, int image)
 			"assets/coin/coin_1.xmp", &img.width, &img.heigth);
 }
 
-void	map_reader(t_game *game)
-{
-	int	y;
-	int	x;
-	y = 0;
-	while (game->map[y])
-	{
-		x = 0;
-		while (game->map[y][x])
-		{
-			if (game->map[y][x] == 67)
-				mlx_put_image_to_window(game->game, game->win, \
-					game->col, x * 50, y * 50);
-			x++;
-		}
-		y++;
-	}
-}
-
 void	ft_animation(t_game *game)
 {
 	int	image;
@@ -57,6 +38,6 @@ void	ft_animation(t_game *game)
 	if (game->col)
 		mlx_destroy_image(game->game, game->col);
 	coin_flip_images(game, image);
-	map_reader(game);
+	ft_map_reader(game, 67, game->col);
 	image++;
 }
