@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:00:25 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/28 20:03:57 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/28 20:34:26 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,16 @@ void	ft_new_position(t_game *game, int x, int y)
 
 void	ft_move(t_game *game, int x, int y)
 {	
+	char	*game_cnt;
 	if (game->map[game->player_y + y][game->player_x + x] == 49)
 		return ;
 	game->mv_cnt++;
 	game->player_x += x;
 	game->player_y += y;
 	ft_print_sprite(game, 0, 0);
-	mlx_string_put(game->game, game->win, 15, 15, 0, ft_itoa(game->mv_cnt));
+	game_cnt = ft_itoa(game->mv_cnt);
+	mlx_string_put(game->game, game->win, 15, 15, 0, game_cnt);
+	free(game_cnt);
 	ft_new_position(game, game->player_x, game->player_y);
 	ft_player_move(game, x, y);
 	ft_print_sprite(game, game->player_x - x, game->player_y - y);
