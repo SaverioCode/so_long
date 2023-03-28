@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 16:38:29 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/27 19:51:37 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/28 16:43:49 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_map_check_chars(t_game *map)
 	int		i;
 	int		j;
 
-	str = "01CEP";
+	str = "012CEP";
 	i = -1;
 	ex_pl_col = ft_calloc(3 * 4);
 	while (map->map[++i])

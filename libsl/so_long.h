@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:02:54 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/27 20:21:37 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/28 16:42:49 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ typedef struct s_game
 	void	*player_down;
 	int		mv_cnt;
 	void	*enemy;
+	void	*enemy_r;
+	void	*enemy_l;
 	void	*col;
 	int		col_tot;
 	int		col_cnt;
@@ -63,7 +65,7 @@ void	ft_map_handler(char *map_path, t_game *map);
 void	ft_map_checker(t_game *map);
 void	map_printer(t_game *game, t_img *img);
 void	ft_print_sprite(t_game *game, int x, int y);
-void	ft_print_bckground_ground(t_game *game, int x, int y);
+// void	ft_print_bckground_ground(t_game *game, int x, int y);
 void	ft_key_hook(int key, t_game *game);
 void	ft_close_game(t_game *game);
 void	ft_game_over(t_game *game, char *str);
