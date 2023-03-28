@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:00:25 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/27 20:49:42 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/28 16:48:39 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	ft_new_position(t_game *game, int x, int y)
 	}
 	else if (game->map[y][x] == 69 && game->col_tot == game->col_cnt)
 		ft_game_over(game, "YOU WIN!");
-	// else if (game->map[y][x] == 50)
-	// 	ft_game_over();/// lose ///
+	else if (game->map[y][x] == 50)
+		ft_game_over(game, "YOU LOSE!");
 }
 
 void	ft_move(t_game *game, int x, int y)
