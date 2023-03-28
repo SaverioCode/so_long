@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 17:26:47 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/28 19:59:53 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/28 20:19:08 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	initialize_imgs(t_game *game, t_img *img)
 	game->wall = mlx_xpm_file_to_image(game->game, \
 		"assets/wall.xpm", &img->width, &img->heigth);
 	game->col = mlx_xpm_file_to_image(game->game, \
-		"assets/coin/coin_5.xpm", &img->width, &img->heigth);
+		"assets/coin/coin_0.xpm", &img->width, &img->heigth);
 	game->exit = mlx_xpm_file_to_image(game->game, \
 		"assets/exit_0.xpm", &img->width, &img->heigth);
 	characters_imgs(game, img);

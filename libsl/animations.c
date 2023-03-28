@@ -6,7 +6,7 @@
 /*   By: fgarzi-c <fgarzi-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:00:31 by fgarzi-c          #+#    #+#             */
-/*   Updated: 2023/03/28 19:59:39 by fgarzi-c         ###   ########.fr       */
+/*   Updated: 2023/03/28 20:16:15 by fgarzi-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ void	coin_flip_images(t_game *game, int image)
 	else if (image == 4)
 		game->col = mlx_xpm_file_to_image(game->game, \
 			"assets/coin/coin_4.xpm", &img.width, &img.heigth);
-	if (image == 5)
-		game->col = mlx_xpm_file_to_image(game->game, \
-			"assets/coin/coin_5.xpm", &img.width, &img.heigth);
+	// if (image == 5)
+	// 	game->col = mlx_xpm_file_to_image(game->game, \
+	// 		"assets/coin/coin_5.xpm", &img.width, &img.heigth);
 }
 
 void	ft_animation(t_game *game)
@@ -66,11 +66,11 @@ void	ft_animation(t_game *game)
 	if (game->col)
 		mlx_destroy_image(game->game, game->col);
 	coin_flip_images(game, image);
-	coin_flip_images_p2(game, image);
+	// coin_flip_images_p2(game, image);
 	ft_map_reader(game, 67, game->background);
 	ft_map_reader(game, 67, game->ground);
 	ft_map_reader(game, 67, game->col);
 	image++;
-	if (image > 9)
+	if (image > 4)
 		image = 0;
 }
